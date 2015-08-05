@@ -1,0 +1,38 @@
+# user folders
+**/files/
+
+# project configurations
+**/.settings/
+**/.project
+**/.classpath
+**/nb-configuration.xml
+**/nbactions*.xml
+**/dependency-reduced-pom.xml
+**/jetty-web.xml
+
+# log files
+*.log
+
+# binary files
+*.class
+**/bin/
+**/target/
+
+# compacted files
+*.zip
+*.tar.gz
+*.tar.xz
+*.tar.bz2
+*.jar
+
+# images
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.gif
+*.GIF
+*.jpeg
+*.JPEG
+*.ico
+

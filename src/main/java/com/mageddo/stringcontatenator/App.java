@@ -1,7 +1,6 @@
 package com.mageddo.stringcontatenator;
 
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -12,22 +11,15 @@ import java.io.InputStreamReader;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 public class App extends JFrame {
 	private static final long serialVersionUID = 7259014485143657400L;
-//	private static final String CHARSET = "UTF-8";
 	protected static final Object VALIDATION_MESSAGE = "Type some text before";
 	private final String lineSeparator = System.getProperty("line.separator");
 	private JTextArea txtSql = new JTextArea();
 	private JTextArea txtJavaCode = new JTextArea();
 	private JButton bGenerateJavaQuery = new JButton("concatenate!");
-//	private JButton bGenerateSqlQuery = new JButton("gerar sql query");
 	private JButton bClear = new JButton("clear result");
 	private JButton bClearAll = new JButton("clear all inputs");
 
@@ -58,17 +50,6 @@ public class App extends JFrame {
 				App.this.txtJavaCode.setText(App.this.generateJavaCode(sql));
 			}
 		});
-//		this.bGenerateSqlQuery.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				String sql = App.this.txtSql.getText();
-//				if ((sql == null) || ("".equals(sql.trim()))) {
-//					JOptionPane.showMessageDialog(null,
-//							VALIDATION_MESSAGE);
-//					return;
-//				}
-//				App.this.txtJavaCode.setText(App.this.generateSqlCode(sql));
-//			}
-//		});
 		this.bClear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				App.this.txtJavaCode.setText("");

@@ -115,7 +115,7 @@ public class App extends JFrame {
 				
 				strBuilder.append("str.append(\"");
 				strBuilder.append(line);
-				strBuilder.append(this.lineSeparator);
+				strBuilder.append(" \\n");
 				strBuilder.append("\");");
 				strBuilder.append(this.lineSeparator);
 			}

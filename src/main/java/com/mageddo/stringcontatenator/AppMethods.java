@@ -22,7 +22,7 @@ public class AppMethods {
 
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
-    protected String generateSqlCode(String sql) {
+    protected static String generateTextFromStringBuilder(String sql) {
         ScriptEngineManager manager = new ScriptEngineManager();
         ScriptEngine engine = manager.getEngineByName("java");
         try {

@@ -5,9 +5,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 
 /**
  * @author elvis
@@ -22,16 +19,9 @@ public class AppMethods {
 
     private static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
-    protected static String generateTextFromStringBuilder(String sql) {
-        ScriptEngineManager manager = new ScriptEngineManager();
-        ScriptEngine engine = manager.getEngineByName("java");
-        try {
-            Object result = engine.eval(sql + "sql.toString();");
-            System.out.println(result);
-        } catch (ScriptException e1) {
-            e1.printStackTrace();
-        }
-        return "oi :/";
+    protected static String generateTextFromStringBuilder(final String sql, final String variableName) {
+        Object result = groovy.util.Eval.me(String.format("%s;%s.toString();", sql, variableName));
+        return result.toString();
     }
 
     protected static String generateJavaCode(final String inputStr, final String variableName) {

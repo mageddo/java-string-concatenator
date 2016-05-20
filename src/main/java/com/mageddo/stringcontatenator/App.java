@@ -1,6 +1,7 @@
 package com.mageddo.stringcontatenator;
 
 import static com.mageddo.stringcontatenator.AppMethods.generateJavaCode;
+import static com.mageddo.stringcontatenator.AppMethods.generateTextFromStringBuilder;
 
 import java.awt.*;
 
@@ -72,7 +73,7 @@ public class App extends JFrame {
 		this.bGenerateStr.addActionListener(e -> {
 			final String javaStr = App.this.txtJavaCode.getText();
 			if(isValidInput(javaStr)){
-				App.this.txtSql.setText(AppMethods.generateTextFromStringBuilder(javaStr));
+				App.this.txtSql.setText(generateTextFromStringBuilder(javaStr, txtVariableName.getText()));
 			}
 		});
 	}

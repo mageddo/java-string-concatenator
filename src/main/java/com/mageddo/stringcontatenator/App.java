@@ -11,7 +11,9 @@ public class App extends JFrame {
 	protected static final Object VALIDATION_MESSAGE = "Type some text before";
 	private final JTextArea txtSql = new JTextArea();
 	private final JTextArea txtJavaCode = new JTextArea();
-	private final JButton bGenerateJavaQuery = new JButton("concatenate!");
+	private final JTextField txtVariableName = new JTextField("str");
+	private final JButton bGenerateJavaQuery = new JButton("generate java");
+	private final JButton bGenerateStr = new JButton("generate string");
 	private final JButton bClear = new JButton("clear result");
 	private final JButton bClearAll = new JButton("clear all inputs");
 
@@ -24,9 +26,12 @@ public class App extends JFrame {
 		panelCodigos.add(new JScrollPane(this.txtSql));
 		panelCodigos.add(new JScrollPane(this.txtJavaCode));
 
-		final JPanel panelButtons = new JPanel(new GridLayout(1, 3));
+		final JPanel panelButtons = new JPanel(new GridLayout(2, 3));
+		panelButtons.add(new JLabel("variable:"));
+		panelButtons.add(this.txtVariableName);
 		panelButtons.add(this.bClear);
 		panelButtons.add(this.bClearAll);
+		panelButtons.add(this.bGenerateStr);
 		panelButtons.add(this.bGenerateJavaQuery);
 
 		add(panelCodigos, BorderLayout.CENTER);
@@ -38,7 +43,7 @@ public class App extends JFrame {
 				JOptionPane.showMessageDialog(App.this, VALIDATION_MESSAGE);
 				return;
 			}
-			App.this.txtJavaCode.setText(generateJavaCode(sql));
+			App.this.txtJavaCode.setText(generateJavaCode(sql, txtVariableName.getText()));
 		});
 
 		setSize(600, 400);

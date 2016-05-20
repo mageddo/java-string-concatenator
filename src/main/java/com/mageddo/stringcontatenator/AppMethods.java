@@ -34,13 +34,13 @@ public class AppMethods {
         return "oi :/";
     }
 
-    protected static String generateJavaCode(String inputStr) {
+    protected static String generateJavaCode(final String inputStr, final String variableName) {
         StringBuffer strBuilder = new StringBuffer();
         try {
             BufferedReader bf = new BufferedReader(new InputStreamReader(
                     new ByteArrayInputStream(inputStr.getBytes())));
 
-            strBuilder.append("StringBuilder str = new StringBuilder();");
+            strBuilder.append(String.format("StringBuilder %s = new StringBuilder();", variableName));
             strBuilder.append(LINE_SEPARATOR);
             String line;
             while ((line = bf.readLine()) != null) {
@@ -48,7 +48,8 @@ public class AppMethods {
                 // scaping aspas
                 line = line.replaceAll("\"", "\\\\\"");
 
-                strBuilder.append("str.append(\"");
+                strBuilder.append(variableName);
+                strBuilder.append(".append(\"");
                 strBuilder.append(line);
                 strBuilder.append(" \\n");
                 strBuilder.append("\");");

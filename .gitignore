@@ -36,3 +36,5 @@
 *.JPEG
 *.ico
 
+.idea/
+*.iml

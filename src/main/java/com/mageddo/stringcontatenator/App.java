@@ -58,7 +58,7 @@ public class App extends JFrame {
 
 	private void setUpActions() {
 		/*
-		 * Limpa o texto da caixa do código java
+		 * Limpa o texto da caixa do cÃ³digo java
 		 */
 		this.bClear.addActionListener(e -> {
 			App.this.txtJavaCode.setText("");

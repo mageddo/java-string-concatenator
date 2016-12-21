@@ -24,12 +24,15 @@ public class AppMethods {
         return result.toString();
     }
 
-    protected static String generateJavaCode(final String inputStr, final String variableName) {
+    protected static String generateJavaCode(final String inputStr, final String variableName, boolean isFinalVariable) {
         StringBuffer strBuilder = new StringBuffer();
         try {
             BufferedReader bf = new BufferedReader(new InputStreamReader(
                     new ByteArrayInputStream(inputStr.getBytes())));
 
+            if(isFinalVariable){
+                strBuilder.append("final ");
+            }
             strBuilder.append(String.format("StringBuilder %s = new StringBuilder();", variableName));
             strBuilder.append(LINE_SEPARATOR);
             String line;

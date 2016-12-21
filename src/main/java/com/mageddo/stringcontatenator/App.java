@@ -15,8 +15,10 @@ public class App extends JFrame {
 	private final JTextField txtVariableName = new JTextField("str");
 	private final JButton bGenerateJavaQuery = new JButton("generate java");
 	private final JButton bGenerateStr = new JButton("generate string");
-	private final JButton bClear = new JButton("clear java string");
+	private final JButton bClear = new JButton("clear 2nd input");
 	private final JButton bClearAll = new JButton("clear all inputs");
+	private final JCheckBox chkFinalVariable = new JCheckBox("", true);
+	private final JTextField txtTabulator = new JTextField("\t");
 
 	public App() {
 		setLayout(new BorderLayout());
@@ -27,9 +29,16 @@ public class App extends JFrame {
 		panelCodigos.add(new JScrollPane(this.txtSql));
 		panelCodigos.add(new JScrollPane(this.txtJavaCode));
 
-		final JPanel panelButtons = new JPanel(new GridLayout(2, 3));
-		panelButtons.add(new JLabel("variable:"));
+		final JPanel panelButtons = new JPanel(new GridLayout(3, 3));
+		panelButtons.add(new JLabel("final variable"));
+		panelButtons.add(new JLabel("variable name"));
+		panelButtons.add(new JLabel(""));
+//		panelButtons.add(new JLabel("tabulator"));
+		panelButtons.add(this.chkFinalVariable);
 		panelButtons.add(this.txtVariableName);
+//		panelButtons.add(this.txtTabulator);
+//		panelButtons.add(new JLabel(""));
+
 		panelButtons.add(this.bClear);
 		panelButtons.add(this.bClearAll);
 		panelButtons.add(this.bGenerateStr);
@@ -66,7 +75,7 @@ public class App extends JFrame {
 		this.bGenerateJavaQuery.addActionListener((e) -> {
 			final String sql = App.this.txtSql.getText();
 			if(isValidInput(sql)){
-				App.this.txtJavaCode.setText(generateJavaCode(sql, txtVariableName.getText()));
+				App.this.txtJavaCode.setText(generateJavaCode(sql, txtVariableName.getText(), chkFinalVariable.isSelected()));
 			}
 		});
 

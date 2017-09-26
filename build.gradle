@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+	mavenLocal()
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.4.6'
+	testCompile 'junit:junit:4.12'
+}
+

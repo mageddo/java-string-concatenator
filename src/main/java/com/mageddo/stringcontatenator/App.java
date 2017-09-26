@@ -8,6 +8,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class App extends JFrame {
+	
 	private static final long serialVersionUID = 7259014485143657400L;
 	protected static final Object VALIDATION_MESSAGE = "Type some text before";
 	private final JTextArea txtSql = new JTextArea();
@@ -33,11 +34,8 @@ public class App extends JFrame {
 		panelButtons.add(new JLabel("final variable"));
 		panelButtons.add(new JLabel("variable name"));
 		panelButtons.add(new JLabel(""));
-//		panelButtons.add(new JLabel("tabulator"));
 		panelButtons.add(this.chkFinalVariable);
 		panelButtons.add(this.txtVariableName);
-//		panelButtons.add(this.txtTabulator);
-//		panelButtons.add(new JLabel(""));
 
 		panelButtons.add(this.bClear);
 		panelButtons.add(this.bClearAll);
@@ -48,8 +46,8 @@ public class App extends JFrame {
 		add(panelButtons, BorderLayout.SOUTH);
 
 		setSize(600, 400);
-		setTitle("Java String Concatenator 1.0");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setTitle("Java String Concatenator 1.1");
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setVisible(true);
 
@@ -64,7 +62,7 @@ public class App extends JFrame {
 			App.this.txtJavaCode.setText("");
 		});
 
-		/**
+		/*
 		 * Limpa o texto de todas as caixas
 		 */
 		this.bClearAll.addActionListener(e -> {

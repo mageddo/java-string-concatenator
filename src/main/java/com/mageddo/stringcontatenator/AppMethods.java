@@ -33,19 +33,18 @@ public class AppMethods {
             if(isFinalVariable){
                 strBuilder.append("final ");
             }
-            strBuilder.append(String.format("StringBuilder %s = new StringBuilder();", variableName));
+            strBuilder.append(String.format("StringBuilder %s = new StringBuilder()", variableName));
             strBuilder.append(LINE_SEPARATOR);
             String line;
             while ((line = bf.readLine()) != null) {
 
-                // scaping aspas
+                // scaping slashes
                 line = line.replaceAll("\"", "\\\\\"");
 
-                strBuilder.append(variableName);
-                strBuilder.append(".append(\"");
+                strBuilder.append("\t.append(\"");
                 strBuilder.append(line);
                 strBuilder.append(" \\n");
-                strBuilder.append("\");");
+                strBuilder.append("\")");
                 strBuilder.append(LINE_SEPARATOR);
             }
         } catch (IOException localIOException) {

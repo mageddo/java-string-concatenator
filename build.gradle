@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -12,3 +13,4 @@ dependencies {
 	testCompile 'junit:junit:4.12'
 }
 
+mainClassName = 'com.mageddo.stringcontatenator.App'

@@ -1,3 +1,5 @@
+# Deprecated
+use https://mageddo.com/tools/sql-generator 
 # java-string-concatenator
 This project create java concatenated string from the text that you set
 
